@@ -50,13 +50,13 @@ const getState = async (req, res) => {
 const getFunFact = async (req, res) => {
 
     const stateFacts = await State.findOne({
-        code: req.params.code
+        code: req.params.state
     });
 
     if (!stateFacts || !stateFacts.funfacts.length) {
 
         const state = statesData.find(
-            state => state.code === req.code
+            state => state.code === req.params.state
         );
 
         return res.json({
@@ -77,7 +77,7 @@ const getFunFact = async (req, res) => {
 const getCapital = (req, res) => {
 
     const state = statesData.find(
-        state => state.code === req.params.code
+        state => state.code === req.params.state
     );
 
     res.json({
@@ -88,7 +88,7 @@ const getCapital = (req, res) => {
 
 const getNickname = (req, res) => {
     const state = statesData.find(
-        state => state.code === req.params.code
+        state => state.code === req.params.state
     );
 
     res.json({
@@ -99,7 +99,7 @@ const getNickname = (req, res) => {
 
 const getPopulation = (req, res) => {
     const state = statesData.find(
-        state => state.code === req.params.code
+        state => state.code === req.params.state
     );
 
     res.json({
@@ -110,7 +110,7 @@ const getPopulation = (req, res) => {
 
 const getAdmission = (req, res) => {
     const state = statesData.find(
-        state => state.code === req.params.code
+        state => state.code === req.params.state
     );
 
     res.json({
@@ -155,7 +155,7 @@ const createFunFact = async (req, res) => {
 };
 
 const updateFunFact = async (req, res) => {
-    if(!req?.body?.index || !req?.body?.funfacts){
+    if(!req?.body?.index || !req?.body?.funfact){
         return res.status(400).json({
             message: 'State fun fact index and fun fact required'
         });
@@ -204,14 +204,14 @@ const deleteFunFact = async (req, res) => {
         let state = await State.findOne({ code: stateCode});
 
         if(!state || !state.funfacts.length) {
-            return res.status(204).json({
+            return res.status(404).json({
                 message: `No fun facts found for ${req.state.state}`
             });
         }
 
         const factIndex = req.body.index - 1;
 
-        if(factIndex < 0 || factIndex >= state.funfacts.index) {
+        if(factIndex < 0 || factIndex >= state.funfacts.length) {
             return res.status(400).json({
                 message: "No fun facts at that index"
             });
