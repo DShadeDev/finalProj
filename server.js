@@ -15,7 +15,7 @@ app.use(express.json());
 
 
 app.use('/states', require('./routes/api/states'));
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
