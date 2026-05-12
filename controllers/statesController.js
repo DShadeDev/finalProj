@@ -181,7 +181,7 @@ const updateFunFact = async (req, res) => {
             });
         }
 
-        state.funfacts[factIndex] = req.body.funfacts;
+        state.funfacts[factIndex] = req.body.funfact;
 
         const result = await state.save();
 
