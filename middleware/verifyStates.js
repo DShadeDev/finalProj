@@ -12,7 +12,7 @@ const verifyStates = (req, res, next) => {
         });
     }
 
-    req.params.code = stateCode;
+    req.params.state = stateCode;
 
     next();
 };
