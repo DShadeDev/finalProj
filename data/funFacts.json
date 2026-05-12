@@ -1,0 +1,42 @@
+[
+    {
+        "code": "KS",
+        "funfacts": [
+            "The state animal of Kansas is the bison.",
+            "The state motto: Ad Aspera Per Astra, means 'To the stars through difficulties'.",
+            "My birthday is the day before Kansas Day on January 29th"
+        ]
+    },
+    {
+        "code": "MO",
+        "funfacts": [
+            "The state animal of Missouri is the Missouri Mule",
+            "The state Motto: 'Salus Populi Suprema Lex Esto' means 'The welfare of the people shall be the supreme law",
+            "Kansas City is mostly in Missouri"
+        ]
+    },
+    {
+        "code": "OK",
+        "funfacts": [
+            "Oklahoma has a state soil: Port",
+            "The state animal of Oklahoma is the bison",
+            "Oklahoma's state song is the song 'Oklahoma' from the broadway musical"
+        ]
+    },
+    {
+        "code": "NE",
+        "funfacts": [
+            "The state animal of Nebraska is the White-Tailed Deer",
+            "Nebraska has a state soil: Holdrege",
+            "Nebraska is one of two states to split their electoral college votes"
+        ]
+    },
+    {
+        "code": "CO",
+        "funfacts": [
+            "The state animal of Colorado is the Rocky Mountain Bighorn Sheep",
+            "The name Colorado was taken from the Spanish for the color red",
+            "Colorado is a member of the Four Corners States"
+        ]
+    }
+]
