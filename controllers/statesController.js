@@ -155,9 +155,14 @@ const createFunFact = async (req, res) => {
 };
 
 const updateFunFact = async (req, res) => {
-    if(!req?.body?.index || !req?.body?.funfact){
+    if(!req?.body?.index){
         return res.status(400).json({
-            message: 'State fun fact index and fun fact required'
+            message: 'State fun fact index value required'
+        });
+    }
+    if(!req?.body?.funfact){
+        return res.status(400).json({
+            message: 'State fun fact value required'
         });
     }
 
@@ -169,7 +174,7 @@ const updateFunFact = async (req, res) => {
 
         if (!state) {
             return res.status(404).json({
-                message: `No fun facts found for ${req.state.state}`
+                message: `No fun facts found for ${statesData.state}`
             });
         }
 
@@ -177,7 +182,7 @@ const updateFunFact = async (req, res) => {
 
         if(factIndex < 0 || factIndex >= state.funfacts.length) {
             return res.status(400).json({
-                message: 'No fun facts at that index'
+                message: `No fun facts at that index for ${statesData.state}`
             });
         }
 
