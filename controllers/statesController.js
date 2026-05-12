@@ -40,7 +40,7 @@ const getAllStates = async (req, res) => {
 const getState = async (req, res) => {
 
     const state = statesData.find(
-        state => state.code === req.params.code
+        state => state.code === req.params.state
     );
     const mergedState = await mergeFunFacts(state);
 
