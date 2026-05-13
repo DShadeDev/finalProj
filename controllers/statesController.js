@@ -180,7 +180,7 @@ const updateFunFact = async (req, res) => {
 
         if (!state) {
             return res.status(404).json({
-                message: `No Fun Facts found for ${state.state}`
+                message: `No Fun Facts found for ${stateCode}`
             });
         }
 
