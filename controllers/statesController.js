@@ -99,7 +99,7 @@ const getNickname = (req, res) => {
 
 const getPopulation = (req, res) => {
     const state = statesData.find(
-        state => state.code === req.params.state
+        state => state.code === req.params.state.toUpperCase()
     );
 
     res.json({
