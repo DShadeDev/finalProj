@@ -123,7 +123,6 @@ const createFunFact = async (req, res) => {
 
     if (
         !req?.body?.funfacts ||
-        !Array.isArray(req.body.funfacts) ||
         !req.body.funfacts.length
     ) {
         return res.status(400).json({
@@ -181,7 +180,7 @@ const updateFunFact = async (req, res) => {
 
         if (!state) {
             return res.status(404).json({
-                message: `No Fun Facts found for ${req.state.state}`
+                message: `No Fun Facts found for ${state.state}`
             });
         }
 
@@ -189,7 +188,7 @@ const updateFunFact = async (req, res) => {
 
         if(factIndex < 0 || factIndex >= state.funfacts.length) {
             return res.status(400).json({
-                message: `No Fun Fact found at that index for ${req.state.state}`
+                message: `No Fun Fact found at that index for ${state.state}`
             });
         }
 
